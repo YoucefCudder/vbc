@@ -1,0 +1,38 @@
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
+{% load crispy_forms_field %}
+
+{% block contact %}
+<div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <form class="
+                        w-full
+                        md:w-1/2
+                        bg-white
+                        rounded-lg
+                        p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0" method="POST"
+    action="">
+
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            {{ form.subject.errors }}
+            <label for="{{ form.nom.as_field_group  }}">Votre nom</label>
+            {{ form.nom }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.sender.errors }}
+            <label for="{{ form.email.as_field_group  }}">Votre adresse e-mail</label>
+            {{ form.email }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.message.errors }}
+            <label for="{{ form.message.as_field_group  }}">Votre message:</label>
+            {{ form.message }}
+        </div>
+
+
+        <button type="submit">Envoyer</button>
+
+    </form>
+</div>
+{% endblock %}
