@@ -9,6 +9,7 @@ python-dotenv = "*"
 django-tailwind = {extras = ["reload"], version = "*"}
 django-crispy-forms = "*"
 crispy-tailwind = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

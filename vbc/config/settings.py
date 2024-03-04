@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['villemombleboxingclub.fr', 'www.villemombleboxingclub.fr', '*']
 
 
 # Application definition
@@ -173,3 +173,8 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 TAILWIND_APP_NAME = 'theme'
 
+SECURE_HSTS_SECONDS = 31536000
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
