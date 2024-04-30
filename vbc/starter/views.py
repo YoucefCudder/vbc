@@ -63,3 +63,9 @@ class ContactView(FormView):
         else:
             messages.error(self.request, "Votre message n'a pas été envoyé.")
             return redirect("starter:contact")
+
+
+def instagram_feed():
+    pass
+
+

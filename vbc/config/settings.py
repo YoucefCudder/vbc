@@ -155,17 +155,16 @@ NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 # CONTACT FORM
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
 EMAIL_HOST = "smtp.mailgun.org"
-
 EMAIL_USE_TLS = True
-
 EMAIL_PORT = 587
-
-EMAIL_HOST_USER = os.environ.get('DEFAULT_FROM_EMAIL')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+
 NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL')
+MAILGUN_API_KEY = os.environ.get('MAILGUN_API_KEY')
+
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
@@ -173,8 +172,11 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 TAILWIND_APP_NAME = 'theme'
 
-SECURE_HSTS_SECONDS = 31536000
-
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# SECURE_HSTS_SECONDS = 31536000
+#
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/medias')
+# MEDIA_URL = 'static/medias/'
