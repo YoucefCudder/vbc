@@ -65,7 +65,6 @@ class ContactView(FormView):
             return redirect("starter:contact")
 
 
-def instagram_feed():
-    pass
-
+def blog(request):
+    return render(request, 'starter/blog.html')
 

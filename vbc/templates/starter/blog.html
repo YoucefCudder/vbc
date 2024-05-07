@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+{% block content %}
+<div class="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
+        <img src="https://www.svgrepo.com/show/426192/cogs-settings.svg" alt="Logo" class="mb-8 h-32">
+
+    <h1 class="text-5xl text-white font-bold mb-8 animate-pulse">
+        Coming Soon
+    </h1>
+    <p class="text-white text-lg mb-8">
+       Le blog du VBC arrive bientôt !
+    </p>
+
+    <a href="{% url 'starter:homepage' %}" class="mt-8 inline-block bg-white text-gray-900 font-semibold py-3 px-6 rounded hover:bg-gray-900 hover:text-white transition duration-150 ease-in-out">Accueil</a>
+</div>
+{% endblock %}

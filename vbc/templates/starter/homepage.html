@@ -15,84 +15,136 @@
     <meta content="#000000" name="theme-color"/>
     <title>Accueil | Villemomble boxing club </title>
 </head>
-<body class="text-gray-800 antialiased">
+<header class="text-gray-400 bg-gray-900 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+
+        <img alt="Logo Villemomble Boxing Club" class="mr-3    rounded size-10 flex align-items center"
+                  src="static/medias/vbc.jpg"/>
+
+      <span class="ml-3 text-xl">VBC</span>
+    </a>
+    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+
+       <a class="mr-5 hover:text-white" href="{% url 'starter:blog'  %}">Blog</a>
+       <a class="mr-5 hover:text-white" href="#FAQ">F.A.Q</a>
+       <a class="mr-5 hover:text-white" href="#classes">Horaires</a>
+       <a class="mr-5 hover:text-white" href="#contact">Contact</a>
+
+    </nav>
+    <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+<!--<header class="bg-gray-800 text-white py-5 px-10">-->
+
+<!--  <div class="container mx-auto flex justify-between items-center">-->
+    <!-- Logo -->
+<!--    <a href="#" class="text-2xl font-bold">Villemomble Boxing Club</a>-->
+
+    <!-- Navigation -->
+<!--    <nav>-->
+<!--      <ul class="flex space-x-4">-->
+<!--        <li><a href="{% url 'starter:blog'  %}">Blog</a></li>-->
+<!--        <li><a href="#FAQ">F.A.Q</a></li>-->
+<!--        <li><a href="#classes">Horaires</a></li>-->
+<!--        <li><a href="#contact">Contact</a></li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+  </div>
+
+</header>
+<section class="w-full h-screen flex items-center justify-center bg-no-repeat bg-cover bg-center" style="background-image: url('{{ background_image_url }}');">
+  <div class="text-white text-center">
+
+    <h1 class="text-4xl md:text-6xl font-bold mb-4"> Villemomble Boxing Club, bienvenue !</h1>
+    <p id="typewriter2" class="text-lg md:text-xl">Boxez, gagnez, et écrivez votre propre succès.</p>
+    <a href="#about" class="mt-8 inline-block bg-white text-gray-900 font-semibold py-3 px-6 rounded hover:bg-gray-900 hover:text-white transition duration-150 ease-in-out">À propos</a>
+  </div>
+</section>
+
 <!-- Navbar -->
 
 <!--<nav-->
 
 
 
-                <!-- Icon 3 " Téléchargement" -->
-                <!--            <li class="flex items-center">-->
-                <!--              <button-->
-                <!--                class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"-->
-                <!--                type="button"-->
-                <!--                style="transition: all 0.15s ease 0s;"-->
-                <!--              >-->
-                <!--                <i class="fas fa-arrow-alt-circle-down"></i> Download-->
-                <!--              </button>-->
-                <!--            </li>-->
+<!--                 Icon 3 " Téléchargement"-->
+<!--                            <li class="flex items-center">-->
+<!--                                -->
+<!--                              <button-->
+<!--                                class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"-->
+<!--                                type="button"-->
+<!--                                style="transition: all 0.15s ease 0s;"-->
+<!--                              >-->
+<!--                                <i class="fas fa-arrow-alt-circle-down" ></i> Download-->
+<!--                              </button>-->
+<!--                            </li>-->
 
 
-<div
-        class="relative pt-16 pb-32 flex content-center items-center justify-center"
-        style="min-height: 95vh;"
->
+<!--<div-->
+<!--        class="relative pt-16 pb-32 flex content-center items-center justify-center"-->
+<!--        style="min-height: 95vh;"-->
+<!--&gt;-->
 
-    <div
-            class="absolute top-0 w-full h-full bg-center bg-cover"
-            style='background-image: url("{{ background_image_url }}");'
-    >
+<!--    <div-->
+<!--            class="absolute top-0 w-full h-full bg-center bg-cover"-->
+<!--            style='background-image: url("{{ background_image_url }}");'-->
+<!--    >-->
 
-          <span
-                  class="w-full h-full absolute opacity-45 bg-black"
-                  id="blackOverlay">
+<!--          <span-->
+<!--                  class="w-full h-full absolute opacity-45 bg-black"-->
+<!--                  id="blackOverlay">-->
 
-          </span>
-    </div>
-    <div class="container relative mx-auto">
-        <div class="flex flex-wrap justify-center items-center mx-auto max-w-screen-xl">
-            <a class="flex items-center justify-center" href="https://villemombleboxingclub.fr">
-                <img alt="Logo Villemomble Boxing Club" class="mr-3  h-14 w-14  rounded-xl"
-                     src="static/medias/vbc.jpg"/>
-            </a>
-            <!-- Ajoutez ici d'autres éléments de navigation si nécessaire -->
-        </div>
-        <div class="items-center flex flex-wrap">
-            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                <div class="pr-12">
+<!--          </span>-->
+<!--    </div>-->
+<!--    <div class="container relative mx-auto">-->
+<!--        <div class="flex flex-wrap justify-center items-center mx-auto max-w-screen-xl">-->
+<!--            <a class="flex items-center justify-center" href="https://villemombleboxingclub.fr">-->
+<!--                <img alt="Logo Villemomble Boxing Club" class="mr-3  h-14 w-14  rounded-xl"-->
+<!--                     src="static/medias/vbc.jpg"/>-->
+<!--            </a>-->
+<!--            &lt;!&ndash; Ajoutez ici d'autres éléments de navigation si nécessaire &ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="items-center flex flex-wrap">-->
+<!--            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">-->
+<!--                <div class="pr-12">-->
 
-                    <h1 class="text-white font-semibold text-5xl" id="typewriter">
-                        Villemomble Boxing Club </h1>
+<!--                    <h1 class="text-white font-semibold text-5xl" id="typewriter">-->
+<!--                        Villemomble Boxing Club </h1>-->
 
-                    <p class="mt-4 text-lg text-gray-300" id="typewriter2">
-                        Villemomble Boxing Club : Boxez, gagnez, et écrivez votre propre succès
-                    </p>
+<!--                    <p class="mt-4 text-lg text-gray-300" id="typewriter2">-->
+<!--                        Villemomble Boxing Club : Boxez, gagnez, et écrivez votre propre succès-->
+<!--                    </p>-->
 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div
-        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-        style="height: 70px;"
->
-    <svg
-            class="absolute bottom-0 overflow-hidden"
-            preserveAspectRatio="none"
-            version="1.1"
-            viewBox="0 0 2560 100"
-            x="0"
-            xmlns="http://www.w3.org/2000/svg"
-            y="0"
-    >
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div-->
+<!--        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"-->
+<!--        style="height: 70px;"-->
+<!--&gt;-->
+<!--    <svg-->
+<!--            class="absolute bottom-0 overflow-hidden"-->
+<!--            preserveAspectRatio="none"-->
+<!--            version="1.1"-->
+<!--            viewBox="0 0 2560 100"-->
+<!--            x="0"-->
+<!--            xmlns="http://www.w3.org/2000/svg"-->
+<!--            y="0"-->
+<!--    >-->
 
-    </svg>
-</div>
-</div>
+<!--    </svg>-->
+<!--</div>-->
+<!--</div>-->
 
-<section class="about">
+
+<section class="about" id="about">
     <!-- ====== About Section Start -->
     <section
             class="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark"
@@ -700,7 +752,7 @@
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
                     <div class="mt-10 lg:mt-0">
-               <span class="block mb-4 text-lg font-semibold text-primary">
+               <span id="about-me" class="block mb-4 text-4xl font-semibold text-primary">
                À propos
                </span>
 
@@ -775,7 +827,7 @@
     </section>
     <!-- ====== About Section End -->
 </section>
-<section class="">
+<section id="classes" class="classes">
     <div class="relative w-full h-full">
         <div class="absolute hidden w-full bg-gray-50 lg:block h-96"></div>
         <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -870,13 +922,13 @@
 </section>
 <!-- citation -->
 <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
+    <div class="container px-5 py-12 mx-auto">
         <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
             <svg class="inline-block w-8 h-8 text-gray-400 mb-8" fill="currentColor" viewBox="0 0 975.036 975.036"
                  xmlns="http://www.w3.org/2000/svg">
                 <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
             </svg>
-            <p class="leading-relaxed text-lg">
+            <p class="leading-relaxed text-3xl">
                 « La boxe est quelque chose de magique. Elle donne de la discipline au fougueux, de la force au faible
                 et de l'assurance au timide. »</p>
             <span class="inline-block h-1 w-10 rounded bg-gray-900 mt-8 mb-6"></span>
@@ -1144,117 +1196,75 @@
 </section>
 
 <!-- Contact -->
+<div id="modal" class="modal fade">
+  <div data-modal-target="default-modal" data-modal-toggle="default-modal" id="dialog" class="modal-dialog" hx-target="this"></div>
+</div>
 
-
-<section class="">
-
-    <div class="relative w-full h-full">
-        <div class="absolute hidden w-full bg-gray-50 lg:block h-96"></div>
-
-
-    </div>
-
-    </div>
-</section>
-<!-- / feature avantage pratique de la boxe -->
-<section>
-    <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-            <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-        <span class="relative inline-block">
-          <svg class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-               fill="currentColor"
-               viewBox="0 0 52 24">
-            <defs>
-              <pattern height=".30" id="2c67e949-4a23-49f7-bf27-ca140852cf21" width=".135" x="0" y="0">
-                <circle cx="1" cy="1" r=".7"></circle>
-              </pattern>
-            </defs>
-            <rect fill="url(#2c67e949-4a23-49f7-bf27-ca140852cf21)" height="24" width="52"></rect>
-          </svg>
-          <span class="relative">Contactez</span>
-        </span>-nous !
-            </h2>
-            <p class="text-base text-gray-700 md:text-lg">
-                Phrase renseignement Contact + Formulaire </p>
+<div class="modal">
+          <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+            <div class="w-full lg:w-6/12 px-4">
+              <div
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
+              >
+                <div class="flex-auto p-5 lg:p-10">
+                  <h4 class="text-2xl font-semibold">Want to work with us?</h4>
+                  <p class="leading-relaxed mt-1 mb-4 text-gray-600">
+                    Complete this form and we will get back to you in 24 hours.
+                  </p>
+                  <div class="relative w-full mb-3 mt-8">
+                    <label
+                      class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                      for="full-name"
+                      >Full Name</label
+                    ><input
+                      type="text"
+                      class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                      placeholder="Full Name"
+                      style="transition: all 0.15s ease 0s;"
+                    />
+                  </div>
+                  <div class="relative w-full mb-3">
+                    <label
+                      class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                      for="email"
+                      >Email</label
+                    ><input
+                      type="email"
+                      class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                      placeholder="Email"
+                      style="transition: all 0.15s ease 0s;"
+                    />
+                  </div>
+                  <div class="relative w-full mb-3">
+                    <label
+                      class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                      for="message"
+                      >Message</label
+                    ><textarea
+                      rows="4"
+                      cols="80"
+                      class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                      placeholder="Type a message..."
+                    ></textarea>
+                  </div>
+                  <div class="text-center mt-6">
+                    <button
+                      class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                      type="button"
+                      style="transition: all 0.15s ease 0s;"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-    </div>
-    <dialog class="modal" id="my_modal_1">
-        <div class="modal-box">
-            <div class="modal-action">
-                <form method="dialog">
-                    <!-- if there is a button in form, it will close the modal -->
-                    <button class="btn">Close</button>
-                </form>
-                <div class="relative block py-24 lg:pt-0 ">
-                    <div class="container mx-auto px-4">
-                        <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
-                            <div class="w-full lg:w-6/12 px-4">
-                                <div
-                                        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
-                                >
-                                    <div class="flex-auto p-5 lg:p-10">
-                                        <h4 class="text-2xl font-semibold">Want to work with us?</h4>
-                                        <p class="leading-relaxed mt-1 mb-4 text-gray-600">
-                                            Complete this form and we will get back to you in 24 hours.
-                                        </p>
-                                        <div class="relative w-full mb-3 mt-8">
-                                            <label
-                                                    class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                                    for="full-name"
-                                            >Full Name</label
-                                            ><input
-                                                class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                                placeholder="Full Name"
-                                                style="transition: all 0.15s ease 0s;"
-                                                type="text"
-                                        />
-                                        </div>
-                                        <div class="relative w-full mb-3">
-                                            <label
-                                                    class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                                    for="email"
-                                            >Email</label
-                                            ><input
-                                                class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                                placeholder="Email"
-                                                style="transition: all 0.15s ease 0s;"
-                                                type="email"
-                                        />
-                                        </div>
-                                        <div class="relative w-full mb-3">
-                                            <label
-                                                    class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                                    for="message"
-                                            >Message</label
-                                            ><textarea
-                                                class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                                cols="80"
-                                                placeholder="Type a message..."
-                                                rows="4"
-                                        ></textarea>
-                                        </div>
-                                        <div class="text-center mt-6">
-                                            <button
-                                                    class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                                                    style="transition: all 0.15s ease 0s;"
-                                                    type="button"
-                                            >
-                                                Send Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-    </dialog>
 
-</section>
+
 
 <!-- FAQ section -->
 <section>

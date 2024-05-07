@@ -1,7 +1,7 @@
 
 
 //
-const words = [ "Boxez, gagnez, et écrivez votre propre succès"];
+const words = [ "Boxez, gagnez, et écrivez votre propre succès."];
 let i = 0;
 let j = 0;
 let currentWord = "";
