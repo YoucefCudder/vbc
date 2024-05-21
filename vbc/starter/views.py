@@ -12,59 +12,37 @@ from config import settings
 
 
 def homepage(request):
-    form = ContactForm
-    return render(request, "starter/homepage.html", {"form": form})
+    return render(request, "starter/homepage.html")
 
 
 class SuccessView(TemplateView):
     template_name = "starter/success.html"
 
 
-class ContactView(FormView):
-    template_name = "starter/contact.html"
-    form_class = ContactForm
-    success_url = "starter/success.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["form"] = ContactForm
-        return context
-
-    def form_valid(self, form):
-        if self.request.method == "POST":
-            form = ContactForm(self.request.POST)
-            if form.is_valid():
-                nom = form.cleaned_data["nom"]
-                email = form.cleaned_data["email"]
-                message = form.cleaned_data["message"]
-                full_message = f"""
-                               Received message below from {nom}, {email}
-                               ________________________
-    
-    
-                               {message}
-                               """
-
-                send_mail(
-                    subject="Received contact form submission",
-                    message=full_message,
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[settings.NOTIFY_EMAIL],
-
-                )
-
-                messages.success(self.request, "Votre message a bien été envoyé.")
-                return redirect("starter:success")
-
-            else:
-                messages.error(self.request, "Votre message n'a pas été envoyé.")
-                return redirect("starter:contact")
-
-        else:
-            messages.error(self.request, "Votre message n'a pas été envoyé.")
-            return redirect("starter:contact")
-
-
 def blog(request):
     return render(request, 'starter/blog.html')
 
+
+def map(request):
+    return render(request, 'starter/map.html')
+
+def about(request):
+    return render(request, 'starter/about.html')
+
+
+def contact(request):
+    form = ContactForm
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            pass
+            return redirect('success')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
+
+def success(request):
+    return HttpResponse('Success!')

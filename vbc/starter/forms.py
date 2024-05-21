@@ -14,10 +14,3 @@ class ContactForm(forms.Form):
         widget=forms.Textarea(attrs={"placeholder": "Votre message"})
     )
 
-    # class Meta:
-    #     fields = ['nom', 'email', 'message']
-    #
-    #
-    #
-
-
