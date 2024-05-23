@@ -6,12 +6,13 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.urls import reverse
 from django.views.generic import TemplateView, FormView
-
 from .forms import ContactForm
 from config import settings
 
 
 def homepage(request):
+    contact(request)
+
     return render(request, "starter/homepage.html")
 
 
@@ -26,22 +27,31 @@ def blog(request):
 def map(request):
     return render(request, 'starter/map.html')
 
+
 def about(request):
     return render(request, 'starter/about.html')
 
 
-def contact(request):
-    form = ContactForm
+def faq(request):
+    return render(request, 'starter/faq.html')
 
-    if request.method == 'POST':
+
+def contact(request):
+    if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            # Process the form data
-            pass
-            return redirect('success')
+            nom = form.cleaned_data["nom"]
+            email = form.cleaned_data["email"]
+            message = form.cleaned_data["message"]
+            send_mail(subject="contact boxe site internet", message=f"{message} \n de {nom} {email}", from_email=email,
+                      recipient_list=["youaouali@gmailcom", email])
+            messages.add_message(request, messages.INFO,
+                                 "Email envoyé, je réponds très vite :) Vous avez reçu une copie de l'email.")
+            return redirect("starter:contact")
     else:
         form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+
+    return render(request, "starter/contact.html", context={"form": form})
 
 
 def success(request):

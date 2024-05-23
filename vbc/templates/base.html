@@ -28,13 +28,35 @@
 </head>
 
 <body>
+<nav class="text-gray-400 bg-gray-900 body-font  sticky top-0 z-50">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
 
+            <img alt="Logo Villemomble Boxing Club" class="mr-3  rounded size-10 flex align-items center"
+                 src="static/medias/vbc.jpg"/>
+
+            <span class="ml-3 text-xl">VBC</span>
+        </a>
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+
+            <a class="mr-5 text-lg text-white" href="{% url 'starter:blog'  %}">Blog</a>
+            <a class="mr-5 text-lg text-white" href="#horaires">Horaires</a>
+            <a class="mr-5 text-lg text-white" href="#tarifs">Tarifs</a>
+            <a class="mr-5 text-lg text-white" href="#galerie">Galerie</a>
+            <a class="mr-5 text-lg text-white" href="#FAQ">F.A.Q</a>
+                        <a class="mr-5 text-lg text-white" href="{% url 'starter:contact' %} ">Contact</a>
+        </nav>
+    </div>
+</nav>
 
 {% block content %}
 {% endblock %}
 
+{% block contact %}
+{% endblock %}
 
-<footer class=" text-gray-500 transition-colors duration-200 bg-white dark:bg-gray-900 text-2 dark:text-gray-200">
+
+<footer class=" text-gray-500 transition-colors duration-200 bg-white dark:bg-gray-900 text-2 dark:text-gray-200 sticky top-full">
 
             <div class="flex flex-col items-center justify-center flex-1 mt-7 md:mt-0 md:items-start md:pl-5">
                 <span class="">

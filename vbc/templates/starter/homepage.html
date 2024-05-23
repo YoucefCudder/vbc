@@ -12,9 +12,11 @@
 {% static 'medias/vbc.jpg' as background4_image_url %}
 
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="#000000" name="theme-color"/>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="#000000" name="theme-color">
+    <meta content="vbc boxe anglaise villemomble boxing le noble art" name="Villemomble Boxing Club">
+    <meta content="sport cardio boxe association" name="VBC">
     <script crossorigin="anonymous"
             integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
             src="https://unpkg.com/htmx.org@1.9.12"></script>
@@ -24,40 +26,14 @@
 
     <title>Accueil | Villemomble boxing club </title>
 </head>
-<nav class="text-gray-400 bg-gray-900 body-font  sticky top-0 z-50">
-    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-
-            <img alt="Logo Villemomble Boxing Club" class="mr-3  rounded size-10 flex align-items center"
-                 src="static/medias/vbc.jpg"/>
-
-            <span class="ml-3 text-xl">VBC</span>
-        </a>
-        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
-
-            <a class="mr-5 text-lg text-white" href="{% url 'starter:blog'  %}">Blog</a>
-            <a class="mr-5 text-lg text-white" href="#horaires">Horaires</a>
-            <a class="mr-5 text-lg text-white" href="#tarifs">Tarifs</a>
-            <a class="mr-5 text-lg text-white" href="#galerie">Galerie</a>
-            <a class="mr-5 text-lg text-white" href="#FAQ">F.A.Q</a>
-<!--            <a class="mr-5 text-lg text-white" href="#contact">Contact</a>-->
-        </nav>
-    </div>
-</nav>
 
 
 
 <!-- header -->
 
 
-<section
-        class="relative  bg-cover bg-center bg-no-repeat" style='background-image: url("{{ background_image_url }}"); '
->
-
-    <!--<video controls autoplay>-->
-    <!--  <source src="static/medias/boxingvid.mp4" type="video/mp4">-->
-    <!--</video>-->
-
+<section class="relative  bg-cover bg-center bg-no-repeat"
+         style='background-image: url("{{ background_image_url }}"); '>
     <div
             class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
     ></div>
@@ -78,7 +54,7 @@
             <div class="mt-8 flex flex-wrap gap-4 text-center">
                 <a
                         class="block w-full rounded bg-blue-900 px-12 py-3 text-lg font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-                        href="#"
+                        href="#about"
                 >
                     A propos
                 </a>
@@ -93,112 +69,10 @@
         </div>
     </div>
 </section>
+<section>
+    {% include 'starter/about.html' %}
 
-<!-- ====== About Section Start -->
-<section class="pb-8 relative block bg-gray-900">
-    <div
-            class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style="height: 65px;"
-    >
-        <svg
-                class="absolute bottom-0 overflow-hidden"
-                preserveAspectRatio="none"
-                version="1.1"
-                viewBox="0 0 2560 100"
-                x="0"
-                xmlns="http://www.w3.org/2000/svg"
-                y="0"
-        >
-
-        </svg>
-    </div>
-    <div class="container mx-auto px-4">
-        <div class="flex flex-wrap text-center justify-center">
-            <div class="text-center " id="about">
-                <div class="flex justify-center align-items m-4">
-                    <img class="h-10 w-12  m-4" src="static/medias/ffboxe.png">
-                    <img class="h-10 w-12 rounded m-4" src="static/medias/vbc.png">
-                    <img class="h-10 w-12 rounded m-4" src="static/medias/villemomble.jpg">
-                </div>
-                <h1 class="font-heading text-5xl xs:text-6xl md:text-7xl font-bold text-white mb-10">
-                    <span>À propos du Villemomble Boxing Club</span>
-                </h1>
-            </div>
-            <div class="w-full  px-4">
-
-                <p class="text-3xl leading-relaxed mt-4 text-white">
-                    Le<strong> Villemomble Boxing Club</strong>, association loi 1901, a été créée par passion
-                    pour la boxe
-                    anglaise. Situé au cœur de la ville de Villemomble, notre club est un lieu de rassemblement
-                    pour les amateurs de boxe et les pratiquants de tous niveaux.</p>
-            </div>
-            <h2
-                    class="block mb-4 text-xl font-semibold text-primary text-white"
-            > Histoire
-            </h2>
-            <p class="mb-3 text-white text-3xl">Depuis sa création, le Villemomble Boxing Club a su se démarquer par
-                son
-                engagement envers
-                la transmission des valeurs de la boxe anglaise, tant sur le plan sportif que sur le plan
-                social. Notre association est axée sur l'éducation et le développement personnel de ses
-                membres, que ce soit pour les enfants, les adolescents ou les adultes. Nous offrons des
-                séances d'entraînement variées, allant des débutants aux compétiteurs expérimentés, pour
-                tous les âges.</p>
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-
-                <p class="mb-3 text-white text-3xl"><b>Boxe éducative pour les enfants (6/12 ans) </b>: Nous croyons
-                    que le
-                    sport est un
-                    moyen puissant d'apprendre et de se développer. Nos séances pour les enfants se
-                    concentrent
-                    sur le plaisir, la discipline et le développement de compétences essentielles.</p>
-                <p class="mb-3 text-white text-3xl"><b> Ados/Adultes </b>: Pour les adolescents et les adultes, nous
-                    proposons des
-                    séances
-                    d'entraînement plus intenses, combinant boxe anglaise et condition physique, pour
-                    préparer
-                    les compétiteurs à des compétitions locales et nationales.</p>
-            </div>
-
-
-            <h2
-                    class="block mb-4 text-xl font-semibold text-primary text-white"
-            > Valeurs
-            </h2>
-
-            <p class="mb-5 text-3xl  text-white ">
-
-                Nous valorisons l'esprit d'équipe, la discipline, la persévérance et le fair-play. Le VBC est un lieu
-                où
-                chacun
-                peut s'épanouir, apprendre et progresser en
-                boxe anglaise.</p>
-
-            <h2
-                    class="block mb-4 text-xl font-semibold text-primary text-white"
-            >Objectifs
-            </h2>
-
-            <p class="mb-5  text-white text-3xl">
-
-                Notre objectif principal est de promouvoir le noble art et de contribuer au
-                développement des jeunes talents de Villemomble.
-                Nous visons à offrir un environnement sûr
-                et stimulant où chacun peut s'entraîner, se défouler et se surpasser.</p>
-
-            <blockquote class="text-4xl italic font-semibold text-white ">
-                <p>Nous accueillons tous ceux qui souhaitent découvrir ou approfondir la boxe anglaise. Que
-                    vous soyez un débutant ou un boxeur expérimenté,
-                    nous sommes impatients de vous
-                    accueillir au sein notre club.</p>
-                <span class="inline-block py-1 px-3  text-xs font-semibold text-orange-900 bg-orange-50 rounded-full">FIGHTING!</span>
-            </blockquote>
-        </div>
-    </div>
 </section>
-
-
-<!-- ====== About Section End -->
 <section class="classes">
     <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="horaires">
         <svg class=" flex items-center justify-center h-36 w-36" enable-background="new 0 0 64 64"
@@ -218,7 +92,7 @@
     </h1>
 
 
-    <div class="relative overflow-hidden shadow-md rounded-lg">
+    <div class="relative overflow-hidden  rounded-lg mx-auto max-w-screen-2xl  md:px-8 container px-5">
         <table class="table-fixed w-full text-left">
             <thead class="uppercase bg-[#09142c] text-[#ffffff]"
                    style="background-color: #09142c; color: #ffffff;">
@@ -497,10 +371,10 @@
                     <img alt="gallery" class="w-full object-cover h-full object-center block"
                          src="static/medias/girlboxing.jpg">
                 </div>
-<!--                <div class="md:p-2 p-1 w-1/2">-->
-<!--                    <img alt="gallery" class="w-full object-cover h-full object-center block"-->
-<!--                         src="static/medias/demo2.jpg">-->
-<!--                </div>-->
+                <!--                <div class="md:p-2 p-1 w-1/2">-->
+                <!--                    <img alt="gallery" class="w-full object-cover h-full object-center block"-->
+                <!--                         src="static/medias/demo2.jpg">-->
+                <!--                </div>-->
                 <div class="md:p-2 p-1 w-full">
                     <img alt="gallery" class="w-full h-full object-cover object-center block"
                          src="static/medias/group.jpg">
@@ -516,8 +390,8 @@
                          src="static/medias/coach2.jpg">
                 </div>
                 <div class="md:p-2 p-1 w-1/2">
-                    <img alt="gallery" class="w-full object-cover h-full  block"
-                         src="static/medias/group2.jpg">
+                    <img alt="gallery" class="w-full  object-none h-full block"
+                         src="static/medias/vbc.jpg">
                 </div>
             </div>
         </div>
@@ -525,169 +399,37 @@
 </section>
 
 
-<!-- FAQ section -->
-<section class="pb-4 relative block ">
+<!-- ====== FAQ Section Start -->
+<section class=" ">
     <section class="py-10 sm:py-16 lg:py-24">
-        <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-            <div class="max-w-2xl mx-auto text-center">
-                <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="FAQ">
-                    <svg class=" flex items-center justify-center h-36 w-36" enable-background="new 0 0 64 64"
-                         id="gaming-punch" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.54,32.37c0,0-2.08,0.92-4.27,3.13c-0.65,0.65-1.31,1.42-1.91,2.3c-2.29,3.26-4.01,8.16-2.66,15.17
+
+        <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="FAQ">
+            <svg class=" flex items-center justify-center h-36 w-36" enable-background="new 0 0 64 64"
+                 id="gaming-punch" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path d="M63.54,32.37c0,0-2.08,0.92-4.27,3.13c-0.65,0.65-1.31,1.42-1.91,2.3c-2.29,3.26-4.01,8.16-2.66,15.17
 			c0,0-1.17-0.36-2.99-0.58C46.95,51.85,37.79,52.32,33.74,63c0,0-6.25-14.07-17.78-13.8c-0.26-3.44-1.25-8.27-4.48-11.41
 			c-0.77-1.38-1.8-2.67-3.17-3.74c-1.5-1.19-3.41-2.1-5.84-2.55c0,0,14.46-2.9,9.44-21.25c0,0,16.82,4.94,20.65-10.25
 			c0,0,7.67,16.21,21.83,10.25C54.39,10.25,50.56,26.83,63.54,32.37z" fill="#ffd630"></path>
-                        <path d="M44.06,38.35c0,3.51-1.49,6.99-4.42,9.43c-5.06,4.2-11.44,8.16-17.29,7.86l-7.58,7.58
+                <path d="M44.06,38.35c0,3.51-1.49,6.99-4.42,9.43c-5.06,4.2-11.44,8.16-17.29,7.86l-7.58,7.58
 			c-1.03,1.03-2.69,1.03-3.71,0c-4.36-2.56-7.97-5.62-9.82-9.82c-1.03-1.03-1.03-2.69,0-3.71l1.29-1.3l3.64-3.63l2.48-2.5l0.55-0.55
 			c0,0-2.07-12.73,10.79-20.27c1.34-0.79,3.08-0.53,4.19,0.58c0.68,0.68,1.03,1.56,1.03,2.46c0,0.69-0.2,1.37-0.62,1.98l-4.85,7.05
 			l2.66-3.13c4.65-5.48,13-5.82,18.07-0.74C42.86,32.06,44.06,35.22,44.06,38.35z" fill="#e56353"></path>
-                        <path d="M22.35 55.65l-.53.53c-6.07-3-10.49-7.69-13.17-13.91l.55-.55C11.75 47.82 16.4 52.76 22.35 55.65zM13.77 56.61c-.29.92-1.14 1.52-2.05 1.52-.23 0-.45-.03-.66-.1-4.25-1.36-7.11-4.59-8.54-9.64l3.64-3.63c.79 5.06 2.83 8.05 6.21 9.13C13.51 54.26 14.14 55.49 13.77 56.61z"
-                              fill="#e0ded7"></path>
-                    </svg>
-                    Questions fréquentes
-                </h1>
+                <path d="M22.35 55.65l-.53.53c-6.07-3-10.49-7.69-13.17-13.91l.55-.55C11.75 47.82 16.4 52.76 22.35 55.65zM13.77 56.61c-.29.92-1.14 1.52-2.05 1.52-.23 0-.45-.03-.66-.1-4.25-1.36-7.11-4.59-8.54-9.64l3.64-3.63c.79 5.06 2.83 8.05 6.21 9.13C13.51 54.26 14.14 55.49 13.77 56.61z"
+                      fill="#e0ded7"></path>
+            </svg>
 
-            </div>
-            <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16 ">
-                <div
-                        class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-lg">
-                    <button class="flex items-center justify-between w-full px-4 py-5 sm:p-6" data-state="closed"
-                            id="question1"
-                            type="button">
-                        <span class="flex text-3xl font-semibold text-black">Comment puis-je rejoindre votre association de boxe anglaise ?</span>
-                        <svg class="w-6 h-6 text-gray-400" fill="none" id="arrow1" stroke="currentColor"
-                             viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2"></path>
-                        </svg>
-                    </button>
-                    <div class="px-4 pb-5 sm:px-6 sm:pb-6 m-4 text-3xl" id="answer1" style="display:none">
-                        <p>Il suffit de venir
-                            directement à notre salle lors des horaires d'entrainement. Vous pouvez participer à un
-                            cours
-                            d’essai pour voir si notre style de boxe vous convient. Nous accueillons les débutants
-                            et les pratiquants expérimentés. Vous aurez accès à des séances
-                            d’entraînement régulières et variées, des partenaires d’entraînement et des événements
-                            spéciaux.</p>
-                    </div>
-                </div>
-                <div
-                        class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-lg">
-                    <button class="flex items-center justify-between w-full px-4 py-5 sm:p-6" data-state="closed"
-                            id="question2"
-                            type="button">
-                        <span class="flex  font-semibold text-black text-3xl"> Quelles sont les règles concernant les équipements de protection ?
-</span>
-                        <svg class="w-6 h-6 text-gray-400" fill="none" id="arrow2" stroke="currentColor"
-                             viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2"></path>
-                        </svg>
-                    </button>
-                    <div class="px-4 pb-5 sm:px-6 sm:pb-6 text-3xl m-4 flex justify-center" id="answer2"
-                         style="display:none">
-                        <p>Pour garantir la sécurité de nos membres, nous exigeons le port d’équipements de protection
-                            tels que des gants de boxe, un casque, un protège-dents et des bandages pour les mains.
-                            Avant tout achat, nos entraîneurs vous guideront sur le choix et l’ajustement appropriés de
-                            ces équipements.</p>
-                    </div>
-                </div>
-                <div
-                        class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-lg">
-                    <button class="flex items-center justify-between w-full px-4 py-5 sm:p-6" data-state="closed"
-                            id="question3"
-                            type="button">
-                        <span class="flex text-3xl font-semibold text-black"> Quelles sont les valeurs et l’esprit de notre association de boxe anglaise ?
-</span>
-                        <svg class="w-6 h-6 text-gray-400" fill="none" id="arrow3" stroke="currentColor"
-                             viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2"></path>
-                        </svg>
-                    </button>
-                    <div class="px-4 pb-5 sm:px-6 sm:pb-6 text-3xl m-4 flex justify-center" id="answer3"
-                         style="display:none">
-                        <p>Notre association prône le respect, la discipline et la
-                            camaraderie entre les membres.
-                            Nous encourageons l’esprit d’équipe et le soutien mutuel, car la boxe anglaise est autant
-                            un sport individuel qu’une aventure collective.</p>
-                    </div>
-                </div>
-                <div
-                        class="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-lg">
-                    <button class="flex items-center justify-between w-full px-4 py-5 sm:p-6" data-state="closed"
-                            id="question4"
-                            type="button">
-                        <span class="flex text-3xl font-semibold text-black"> Quel équipement dois-je apporter à ma première session?</span>
-                        <svg class="w-6 h-6 text-gray-400" fill="none" id="arrow4" stroke="currentColor"
-                             viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2"></path>
-                        </svg>
-                    </button>
-                    <div class="px-4 pb-5 sm:px-6 sm:pb-6 text-3xl m-4 flex justify-center" id="answer4"
-                         style="display:none">
-                        <p> Pour votre première session, portez des vêtements confortables et des chaussures de sport.
-                            Il est recommandé d'apporter une bouteille d'eau et un torchon. Les gants et les
-                            protections
-                            seront prêtés lors de votre séance d'essai.</p>
-                    </div>
-                </div>
-            </div>
-            <!--            <p class="text-center text-gray-600 textbase mt-9">-->
-            <!--                Still have questions?-->
-            <!--                <span class="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">Contact-->
-            <!--                our support-->
-            <!--            </span>-->
-            <!--            </p>-->
-        </div>
-        <script>
-        // JavaScript to toggle the answers and rotate the arrows
-        document.querySelectorAll('[id^="question"]').forEach(function(button, index) {
-            button.addEventListener('click', function() {
-                var answer = document.getElementById('answer' + (index + 1));
-                var arrow = document.getElementById('arrow' + (index + 1));
-
-                if (answer.style.display === 'none' || answer.style.display === '') {
-                    answer.style.display = 'block';
-                    arrow.style.transform = 'rotate(0deg)';
-                } else {
-                    answer.style.display = 'none';
-                    arrow.style.transform = 'rotate(-180deg)';
-                }
-            });
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </script>
+            Questions fréquentes
+        </h1>
+        {% include 'starter/faq.html' %}
     </section>
 </section>
-<!-- ====== FAQ Section Start -->
-
 <!-- ====== FAQ Section End -->
 <!-- Map section -->
-
 <section>
     <div class="">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
             <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
-                <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="FAQ">
+                <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="map">
                     <svg class=" flex items-center justify-center h-36 w-36" enable-background="new 0 0 64 64"
                          id="gaming-punch" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
                         <path d="M63.54,32.37c0,0-2.08,0.92-4.27,3.13c-0.65,0.65-1.31,1.42-1.91,2.3c-2.29,3.26-4.01,8.16-2.66,15.17
@@ -719,12 +461,12 @@
                         <div class="max-w-full mx-auto rounded-lg overflow-hidden">
                             <div class="px-6 py-4">
                                 <h3 class="text-lg font-medium text-gray-900">Adresse</h3>
-                                <p class="mt-1 text-gray-600">126 Rue de Neuilly, 93250 Villemomble</p>
+                                <p class="mt-1 text-gray-900 text-xl ">126 Rue de Neuilly, 93250 Villemomble</p>
                             </div>
 
                             <div class="border-t border-gray-200 px-6 py-4">
                                 <h3 class="text-lg font-medium text-gray-900">Contact</h3>
-                                <p class="mt-1 text-gray-600">Email: villemombleboxingclub@gmail.com</p>
+                                <p class="mt-1 text-gray-900 text-xl">Email: villemombleboxingclub@gmail.com</p>
                                 <!--                            <p class="mt-1 text-gray-600">Téléphone: +123123</p>-->
                             </div>
                         </div>
@@ -735,9 +477,6 @@
 
     </div>
 </section>
-{% include 'starter/about.html' %}
-
-
-{% endblock %}
-<script async src="{% static 'js/index.js'%} " type="text/javascript"></script>
+    {% endblock %}
+<script defer src="{% static 'js/index.js'%} " type="text/javascript"></script>
 

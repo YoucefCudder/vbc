@@ -2,7 +2,7 @@ from django.conf.urls.static import static
 from django.urls import path
 
 from config import settings
-from .views import homepage, blog, contact, success, about
+from .views import homepage, blog, contact, success, about, faq
 
 app_name = "starter"
 urlpatterns = [
@@ -11,6 +11,7 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('success/', success, name='success'),
     path('about/', about, name='about'),
+    path('faq/', faq, name='faq'),
 
     path("blog/", blog, name="blog"),
     path('', map, name="map"),
