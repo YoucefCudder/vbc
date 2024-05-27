@@ -44,7 +44,7 @@ def contact(request):
             email = form.cleaned_data["email"]
             message = form.cleaned_data["message"]
             send_mail(subject="contact boxe site internet", message=f"{message} \n de {nom} {email}", from_email=email,
-                      recipient_list=["youaouali@gmailcom", email])
+                      recipient_list=["you.aouali@gmail.com", email])
             messages.add_message(request, messages.INFO,
                                  "Email envoyé, je réponds très vite :) Vous avez reçu une copie de l'email.")
             return redirect("starter:contact")

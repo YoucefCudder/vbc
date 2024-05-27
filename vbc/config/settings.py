@@ -144,16 +144,20 @@ INTERNAL_IPS = [
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 # CONTACT FORM
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = 'live.smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'api'
+# EMAIL_HOST_PASSWORD = '1380bff2ac9112ede18c4d7c3c259442'
+# EMAIL_PORT = '587'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'you.aouali@gmail.com'
+EMAIL_HOST_PASSWORD = 'lknq eoeo irbu bokk'
+EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+EMAIL_USE_SSL = False
 
-NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL')
-MAILGUN_API_KEY = os.environ.get('MAILGUN_API_KEY')
+
+
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
