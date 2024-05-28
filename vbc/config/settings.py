@@ -145,13 +145,9 @@ NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 # CONTACT FORM
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-# EMAIL_HOST = 'live.smtp.mailtrap.io'
-# EMAIL_HOST_USER = 'api'
-# EMAIL_HOST_PASSWORD = '1380bff2ac9112ede18c4d7c3c259442'
-# EMAIL_PORT = '587'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'you.aouali@gmail.com'
-EMAIL_HOST_PASSWORD = 'lknq eoeo irbu bokk'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

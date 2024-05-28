@@ -2,13 +2,13 @@ from django.conf.urls.static import static
 from django.urls import path
 
 from config import settings
-from .views import homepage, blog, contact, success, about, faq
+from .views import homepage, blog, success, about, faq
 
 app_name = "starter"
 urlpatterns = [
 
     path("", homepage, name="homepage"),
-    path('contact/', contact, name='contact'),
+    path('contact/', homepage, name='contact'),
     path('success/', success, name='success'),
     path('about/', about, name='about'),
     path('faq/', faq, name='faq'),

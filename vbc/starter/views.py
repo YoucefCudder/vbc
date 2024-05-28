@@ -11,9 +11,21 @@ from config import settings
 
 
 def homepage(request):
-    contact(request)
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            nom = form.cleaned_data["nom"]
+            email = form.cleaned_data["email"]
+            message = form.cleaned_data["message"]
+            send_mail(subject="contact boxe site internet", message=f"{message} \n de la part de {nom}, email : {email}", from_email=email,
+                      recipient_list=["you.aouali@gmail.com", email])
+            messages.add_message(request, messages.INFO,
+                                 "Email envoyé, je réponds au plus vite :) Vous avez reçu une copie de l'email.")
+            return redirect("starter:homepage")
+    else:
+        form = ContactForm()
 
-    return render(request, "starter/homepage.html")
+    return render(request, "starter/homepage.html", context={"form": form})
 
 
 class SuccessView(TemplateView):
@@ -35,23 +47,23 @@ def about(request):
 def faq(request):
     return render(request, 'starter/faq.html')
 
-
-def contact(request):
-    if request.method == "POST":
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            nom = form.cleaned_data["nom"]
-            email = form.cleaned_data["email"]
-            message = form.cleaned_data["message"]
-            send_mail(subject="contact boxe site internet", message=f"{message} \n de {nom} {email}", from_email=email,
-                      recipient_list=["you.aouali@gmail.com", email])
-            messages.add_message(request, messages.INFO,
-                                 "Email envoyé, je réponds très vite :) Vous avez reçu une copie de l'email.")
-            return redirect("starter:contact")
-    else:
-        form = ContactForm()
-
-    return render(request, "starter/contact.html", context={"form": form})
+#
+# def contact(request):
+#     if request.method == "POST":
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             nom = form.cleaned_data["nom"]
+#             email = form.cleaned_data["email"]
+#             message = form.cleaned_data["message"]
+#             send_mail(subject="contact boxe site internet", message=f"{message} \n de {nom} {email}", from_email=email,
+#                       recipient_list=["you.aouali@gmail.com", email])
+#             messages.add_message(request, messages.INFO,
+#                                  "Email envoyé, je réponds très vite :) Vous avez reçu une copie de l'email.")
+#             return redirect("starter:contact")
+#     else:
+#         form = ContactForm()
+#
+#     return render(request, "starter/contact.html", context={"form": form})
 
 
 def success(request):
