@@ -10,6 +10,7 @@ django-tailwind = {extras = ["reload"], version = "*"}
 django-crispy-forms = "*"
 crispy-tailwind = "*"
 psycopg2-binary = "*"
+environs = "*"
 
 [dev-packages]
 
