@@ -1,40 +1,51 @@
 {% load crispy_forms_tags %}
 {% load tailwind_filters %}
 {% load crispy_forms_field %}
+{% load widget_tweaks %}
+
 <!-- Main Content-->
 {% block contact %}
 
-<main class="mb-4">
-    <div  class="fixed z-10 inset-0 overflow-y-auto hidden " id="contactFormModal">
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="bg-white w-1/2 p-6 rounded shadow-md">
+<main>
+    <div class=" mb-4">
+        <div class="fixed z-10 inset-0 overflow-y-auto hidden " id="contactFormModal">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class=" modal bg-white w-1/2 p-6 rounded shadow-mdt">
 
-                <div class="flex justify-end">
-                    <!-- Close Button -->
-                    <button class="text-gray-900 hover:text-red-500" id="closeContactForm">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2"></path>
-                        </svg>
-                    </button>
+                    <div class="flex justify-end">
+                        <!-- Close Button -->
+                        <button class="text-gray-900 hover:text-red-500" id="closeContactForm">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4 flex items-center justify-center">Contactez-nous ! </h2>
+
+                    <form class="modal-content"
+                          method="post" novalidate>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="flex justify-between">
+                            <div class="mt-8 text-2xl" id="information"></div>
+
+                            <button class="block w-full rounded bg-white px-12 py-3 text-lg font-medium text-blue-900 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+                                    type="button">Annuler
+                            </button>
+                            <button class="block w-full rounded bg-white px-12 py-3 text-lg font-medium text-blue-900 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+                                    type="submit">Envoyer
+                            </button>
+                        </div>
+
+                    </form>
+
                 </div>
-                <h2 class="text-2xl font-bold mb-4 flex items-center justify-center">Contactez-nous ! </h2>
-
-                <form method="post"  hx-post="." >
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <input type="submit" value="Envoyer">
-                </form>
-                {% if messages %}
-                {% for message in messages %}
-                <h5 style="color: green;"> {{ message }}</h5>
-                {% endfor %}
-                {% endif %}
-
             </div>
         </div>
     </div>
+
 </main>
 <script>
 
@@ -43,13 +54,18 @@ const openContactFormButton = document.getElementById('openContactForm');
 const closeContactFormButton = document.getElementById('closeContactForm');
 const contactFormModal = document.getElementById('contactFormModal');
 
-openContactFormButton.addEventListener('click', () => {
-    contactFormModal.classList.remove('hidden');
-});
 
-closeContactFormButton.addEventListener('click', () => {
-    contactFormModal.classList.add('hidden');
-});
+// Function to toggle the modal visibility
+function toggleModal() {
+    contactFormModal.classList.toggle('hidden');
+}
+
+// Event listener for opening the modal
+document.getElementById('openContactForm').addEventListener('click', toggleModal);
+
+// Event listener for closing the modal
+document.getElementById('closeContactForm').addEventListener('click', toggleModal);
+
 
 
 

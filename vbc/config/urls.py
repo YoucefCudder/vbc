@@ -15,15 +15,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+
+from wagtail import urls as wagtail_urls
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.documents import urls as wagtaildocs_urls
 
 
 
 # from starter.views import SuccessView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", include("starter.urls")),
+    path('django-admin/', admin.site.urls),
+
+    path('admin/', include(wagtailadmin_urls)),
+    # path('documents/', include(wagtaildocs_urls)),
+
+
+
+    # For anything not caught by a more specific rule above, hand over to
+    # Wagtail's serving mechanism
+    # re_path(r'blog/', include(wagtail_urls)),
+    path("", include('starter.urls')),
 
     path("__reload__/", include("django_browser_reload.urls")),
 

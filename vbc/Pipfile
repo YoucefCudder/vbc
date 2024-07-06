@@ -11,6 +11,9 @@ django-crispy-forms = "*"
 crispy-tailwind = "*"
 psycopg2-binary = "*"
 environs = "*"
+django-widget-tweaks = "*"
+django-extensions = "*"
+wagtail = "*"
 
 [dev-packages]
 

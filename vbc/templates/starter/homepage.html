@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% load tailwind_filters %}
 {% load crispy_forms_field %}
+{% load widget_tweaks %}
 
 {% block content %}
 {% load static %}
@@ -17,21 +18,25 @@
     <meta content="#000000" name="theme-color">
     <meta content="vbc boxe anglaise villemomble boxing le noble art" name="Villemomble Boxing Club">
     <meta content="sport cardio boxe association" name="VBC">
-    <script crossorigin="anonymous"
-            integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
-            src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <!--    <script crossorigin="anonymous"-->
+    <!--            integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"-->
+    <!--            src="https://unpkg.com/htmx.org@1.9.12"></script>-->
 
-    <script defer src="static/js/index.js" type="text/javascript"></script>
+    <!--    <script defer src="static/js/index.js" type="text/javascript"></script>-->
 
 
     <title>Accueil | Villemomble boxing club </title>
 </head>
 
 
-
 <!-- header -->
 
+{% if messages %}
 
+{% for message in messages %}
+<alert id="message" style="color: green;"> {{ message }}</alert>
+{% endfor %}
+{% endif %}
 <section class="relative  bg-cover bg-center bg-no-repeat"
          style='background-image: url("{{ background_image_url }}"); '>
     <div
@@ -59,46 +64,45 @@
                     A propos
                 </a>
 
-                <a
-                        class="block w-full rounded bg-white px-12 py-3 text-lg font-medium text-blue-900 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
-                        href="#" id="openContactForm"
-                >
-                    Contact
-                </a>
+                <!--                <a-->
+                <!--                        class="block w-full rounded bg-white px-12 py-3 text-lg font-medium text-blue-900 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"-->
+                <!--                        class="btn btn-primary"-->
+                <!--                        data-hx-get="{% url 'starter:contact' %}"-->
+                <!--                        data-hx-swap="beforeend"-->
+                <!--                        data-hx-target="main"-->
+                <!--                        id="openContactForm"-->
+                <!--                        type="button"-->
+                <!--                >-->
+                <!--                    Contact-->
+                <!--                </a>-->
             </div>
         </div>
     </div>
 </section>
+
 <section>
     {% include 'starter/about.html' %}
 
 </section>
+
+
 <section class="classes">
-    <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="horaires">
-        <svg class=" flex items-center justify-center h-36 w-36" enable-background="new 0 0 64 64"
-             id="gaming-punch" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <path d="M63.54,32.37c0,0-2.08,0.92-4.27,3.13c-0.65,0.65-1.31,1.42-1.91,2.3c-2.29,3.26-4.01,8.16-2.66,15.17
-			c0,0-1.17-0.36-2.99-0.58C46.95,51.85,37.79,52.32,33.74,63c0,0-6.25-14.07-17.78-13.8c-0.26-3.44-1.25-8.27-4.48-11.41
-			c-0.77-1.38-1.8-2.67-3.17-3.74c-1.5-1.19-3.41-2.1-5.84-2.55c0,0,14.46-2.9,9.44-21.25c0,0,16.82,4.94,20.65-10.25
-			c0,0,7.67,16.21,21.83,10.25C54.39,10.25,50.56,26.83,63.54,32.37z" fill="#ffd630"></path>
-            <path d="M44.06,38.35c0,3.51-1.49,6.99-4.42,9.43c-5.06,4.2-11.44,8.16-17.29,7.86l-7.58,7.58
-			c-1.03,1.03-2.69,1.03-3.71,0c-4.36-2.56-7.97-5.62-9.82-9.82c-1.03-1.03-1.03-2.69,0-3.71l1.29-1.3l3.64-3.63l2.48-2.5l0.55-0.55
-			c0,0-2.07-12.73,10.79-20.27c1.34-0.79,3.08-0.53,4.19,0.58c0.68,0.68,1.03,1.56,1.03,2.46c0,0.69-0.2,1.37-0.62,1.98l-4.85,7.05
-			l2.66-3.13c4.65-5.48,13-5.82,18.07-0.74C42.86,32.06,44.06,35.22,44.06,38.35z" fill="#e56353"></path>
-            <path d="M22.35 55.65l-.53.53c-6.07-3-10.49-7.69-13.17-13.91l.55-.55C11.75 47.82 16.4 52.76 22.35 55.65zM13.77 56.61c-.29.92-1.14 1.52-2.05 1.52-.23 0-.45-.03-.66-.1-4.25-1.36-7.11-4.59-8.54-9.64l3.64-3.63c.79 5.06 2.83 8.05 6.21 9.13C13.51 54.26 14.14 55.49 13.77 56.61z"
-                  fill="#e0ded7"></path>
-        </svg>
-        Horaires
-    </h1>
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="flex justify-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">
 
-
+                Horaires
+            </h1>
+        </div>
+    </div>
     <div class="relative overflow-hidden  rounded-lg mx-auto max-w-screen-2xl  md:px-8 container px-5">
         <table class="table-fixed w-full text-left">
             <thead class="uppercase bg-[#09142c] text-[#ffffff]"
                    style="background-color: #09142c; color: #ffffff;">
             <tr>
                 <td class="py-6 border text-center font-bold p-4" contenteditable="true"></td>
-                <td class="py-6 border text-center font-bold p-4" contenteditable="true">LUNDI</td>
+                <td class="py-6 border text-center font-bold p-4" contenteditable="true">Lundi</td>
+                <td class="py-6 border text-center font-bold p-4" contenteditable="true">Mardi</td>
                 <td class="py-6 border text-center font-bold p-4" contenteditable="true">mercredi</td>
                 <td class="py-6 border text-center font-bold p-4" contenteditable="true">jeudi</td>
                 <td class="py-6 border text-center font-bold p-4" contenteditable="true">vendredi</td>
@@ -121,6 +125,8 @@
                     <br style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;">19H30
                     <br>
                 </td>
+                <td class="py-9 border text-center font-bold p-4" contenteditable="true">X</td>
+
                 <td class="py-9 border text-center font-bold p-4" contenteditable="true">18h30
                     <br style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;">-
                     <br style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;">19H30
@@ -140,6 +146,10 @@
                 <td class="py-9 border text-center font-bold p-4" contenteditable="true">19h30
                     <br>-
                     <br>21h00
+                </td>
+                <td class="py-9 border text-center font-bold p-4" contenteditable="true">20h00
+                    <br>-
+                    <br>21h10
                 </td>
                 <td class="py-9 border text-center font-bold p-4" contenteditable="true">18h30
                     <br>-
@@ -167,7 +177,7 @@
                  xmlns="http://www.w3.org/2000/svg">
                 <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
             </svg>
-            <p class="leading-relaxed text-3xl">
+            <p class="leading-relaxed text-4xl">
                 « La boxe est quelque chose de magique. Elle donne de la discipline au fougueux, de la force au faible
                 et de l'assurance au timide. »</p>
             <span class="inline-block h-1 w-10 rounded bg-gray-900 mt-8 mb-6"></span>
@@ -176,25 +186,15 @@
         </div>
     </div>
 </section>
-<section class="tarifs">
+<section class="tarifs" id="tarifs">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
 
-    <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="tarifs">
-        <svg class=" flex items-center justify-center h-36 w-36" enable-background="new 0 0 64 64"
-             id="gaming-punch" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <path d="M63.54,32.37c0,0-2.08,0.92-4.27,3.13c-0.65,0.65-1.31,1.42-1.91,2.3c-2.29,3.26-4.01,8.16-2.66,15.17
-			c0,0-1.17-0.36-2.99-0.58C46.95,51.85,37.79,52.32,33.74,63c0,0-6.25-14.07-17.78-13.8c-0.26-3.44-1.25-8.27-4.48-11.41
-			c-0.77-1.38-1.8-2.67-3.17-3.74c-1.5-1.19-3.41-2.1-5.84-2.55c0,0,14.46-2.9,9.44-21.25c0,0,16.82,4.94,20.65-10.25
-			c0,0,7.67,16.21,21.83,10.25C54.39,10.25,50.56,26.83,63.54,32.37z" fill="#ffd630"></path>
-            <path d="M44.06,38.35c0,3.51-1.49,6.99-4.42,9.43c-5.06,4.2-11.44,8.16-17.29,7.86l-7.58,7.58
-			c-1.03,1.03-2.69,1.03-3.71,0c-4.36-2.56-7.97-5.62-9.82-9.82c-1.03-1.03-1.03-2.69,0-3.71l1.29-1.3l3.64-3.63l2.48-2.5l0.55-0.55
-			c0,0-2.07-12.73,10.79-20.27c1.34-0.79,3.08-0.53,4.19,0.58c0.68,0.68,1.03,1.56,1.03,2.46c0,0.69-0.2,1.37-0.62,1.98l-4.85,7.05
-			l2.66-3.13c4.65-5.48,13-5.82,18.07-0.74C42.86,32.06,44.06,35.22,44.06,38.35z" fill="#e56353"></path>
-            <path d="M22.35 55.65l-.53.53c-6.07-3-10.49-7.69-13.17-13.91l.55-.55C11.75 47.82 16.4 52.76 22.35 55.65zM13.77 56.61c-.29.92-1.14 1.52-2.05 1.52-.23 0-.45-.03-.66-.1-4.25-1.36-7.11-4.59-8.54-9.64l3.64-3.63c.79 5.06 2.83 8.05 6.21 9.13C13.51 54.26 14.14 55.49 13.77 56.61z"
-                  fill="#e0ded7"></path>
-        </svg>
-
-        Tarifs
-    </h1>
+            <h1 class="flex justify-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">
+                Tarifs
+            </h1>
+        </div>
+    </div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 my-12">
         <div class="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-5xl lg:grid-cols-2 lg:gap-8">
@@ -204,10 +204,11 @@
                     <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900" id="tier-team">
                         Enfants (6/12ans)</h3>
                     <div class="mt-4 flex items-baseline text-5xl font-bold tracking-tight text-gray-900">
-                        200€
+                        250€
                         <span class="text-lg font-semibold leading-8 tracking-normal text-gray-500">/an</span>
                     </div>
-                    <p class="mt-6 text-base leading-7 text-gray-600">Tarifs de la saison 2024. Paiement en plusieurs
+                    <p class="mt-6 text-base leading-7 text-gray-600">Tarifs de la saison 2024-2025. Paiement en
+                        plusieurs
                         fois possible.</p>
                 </div>
                 <div class="flex flex-1 flex-col p-2">
@@ -234,7 +235,7 @@
                                     </svg>
                                 </div>
                                 <p class="ml-3 text-sm leading-6 text-gray-600">2 entrainements par semaine (septembre
-                                    à juin)</p>
+                                    à juillet)</p>
                             </li>
                             <li class="flex items-start">
                                 <div class="flex-shrink-0">
@@ -258,6 +259,17 @@
                                 </div>
                                 <p class="ml-3 text-sm leading-6 text-gray-600">Tous niveaux</p>
                             </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <svg aria-hidden="true" class="h-6 w-6 text-blue-600" fill="none"
+                                         stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <p class="ml-3 text-sm leading-6 text-gray-600">Possibilité de compétition </p>
+                            </li>
                         </ul>
                         <div class="mt-8">
                             <a aria-describedby="tier-team"
@@ -273,10 +285,11 @@
                     <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900" id="tier-hobby">
                         ADOS / ADULTES </h3>
                     <div class="mt-4 flex items-baseline text-5xl font-bold tracking-tight text-gray-900">
-                        250€
+                        300€
                         <span class="text-lg font-semibold leading-8 tracking-normal text-gray-500">/an</span>
                     </div>
-                    <p class="mt-6 text-base leading-7 text-gray-600">Tarifs de la saison 2024. Paiement en plusieurs
+                    <p class="mt-6 text-base leading-7 text-gray-600">Tarifs de la saison 2024-2025. Paiement en
+                        plusieurs
                         fois possible. </p>
                 </div>
                 <div class="flex flex-1 flex-col p-2">
@@ -303,8 +316,9 @@
                                         </path>
                                     </svg>
                                 </div>
-                                <p class="ml-3 text-sm leading-6 text-gray-600">Jusqu'à 5 entrainements par semaine
-                                    (septembre à juin)</p>
+                                <p class="ml-3 text-sm leading-6 text-gray-600">Jusqu'à 6 entrainements par semaine
+                                    (septembre à juillet)</p>
+
                             </li>
                             <li class="flex items-start">
                                 <div class="flex-shrink-0">
@@ -346,23 +360,16 @@
 
 <!-- galerie -->
 
-<section class="   text-gray-600 body-font">
-    <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="galerie">
-        <svg class="  h-36 w-36" enable-background="new 0 0 64 64"
-             id="gaming-punch" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <path d="M63.54,32.37c0,0-2.08,0.92-4.27,3.13c-0.65,0.65-1.31,1.42-1.91,2.3c-2.29,3.26-4.01,8.16-2.66,15.17
-			c0,0-1.17-0.36-2.99-0.58C46.95,51.85,37.79,52.32,33.74,63c0,0-6.25-14.07-17.78-13.8c-0.26-3.44-1.25-8.27-4.48-11.41
-			c-0.77-1.38-1.8-2.67-3.17-3.74c-1.5-1.19-3.41-2.1-5.84-2.55c0,0,14.46-2.9,9.44-21.25c0,0,16.82,4.94,20.65-10.25
-			c0,0,7.67,16.21,21.83,10.25C54.39,10.25,50.56,26.83,63.54,32.37z" fill="#ffd630"></path>
-            <path d="M44.06,38.35c0,3.51-1.49,6.99-4.42,9.43c-5.06,4.2-11.44,8.16-17.29,7.86l-7.58,7.58
-			c-1.03,1.03-2.69,1.03-3.71,0c-4.36-2.56-7.97-5.62-9.82-9.82c-1.03-1.03-1.03-2.69,0-3.71l1.29-1.3l3.64-3.63l2.48-2.5l0.55-0.55
-			c0,0-2.07-12.73,10.79-20.27c1.34-0.79,3.08-0.53,4.19,0.58c0.68,0.68,1.03,1.56,1.03,2.46c0,0.69-0.2,1.37-0.62,1.98l-4.85,7.05
-			l2.66-3.13c4.65-5.48,13-5.82,18.07-0.74C42.86,32.06,44.06,35.22,44.06,38.35z" fill="#e56353"></path>
-            <path d="M22.35 55.65l-.53.53c-6.07-3-10.49-7.69-13.17-13.91l.55-.55C11.75 47.82 16.4 52.76 22.35 55.65zM13.77 56.61c-.29.92-1.14 1.52-2.05 1.52-.23 0-.45-.03-.66-.1-4.25-1.36-7.11-4.59-8.54-9.64l3.64-3.63c.79 5.06 2.83 8.05 6.21 9.13C13.51 54.26 14.14 55.49 13.77 56.61z"
-                  fill="#e0ded7"></path>
-        </svg>
-        Galerie
-    </h1>
+<section class="">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="flex justify-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl "
+                id="galerie">
+
+                Galerie
+            </h1>
+        </div>
+    </div>
     <div class="container px-5 py-24 mx-auto flex flex-wrap">
 
         <div class="flex flex-wrap md:-m-2 -m-1">
@@ -390,7 +397,7 @@
                          src="static/medias/coach2.jpg">
                 </div>
                 <div class="md:p-2 p-1 w-1/2">
-                    <img alt="gallery" class="w-full  object-none h-full block"
+                    <img alt="gallery" class="w-full object-center  h-full  block"
                          src="static/medias/vbc.jpg">
                 </div>
             </div>
@@ -400,87 +407,63 @@
 
 
 <!-- ====== FAQ Section Start -->
-<section class=" ">
-    <section class="py-10 sm:py-16 lg:py-24">
-
-        <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="FAQ">
-            <svg class=" flex items-center justify-center h-36 w-36" enable-background="new 0 0 64 64"
-                 id="gaming-punch" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                <path d="M63.54,32.37c0,0-2.08,0.92-4.27,3.13c-0.65,0.65-1.31,1.42-1.91,2.3c-2.29,3.26-4.01,8.16-2.66,15.17
-			c0,0-1.17-0.36-2.99-0.58C46.95,51.85,37.79,52.32,33.74,63c0,0-6.25-14.07-17.78-13.8c-0.26-3.44-1.25-8.27-4.48-11.41
-			c-0.77-1.38-1.8-2.67-3.17-3.74c-1.5-1.19-3.41-2.1-5.84-2.55c0,0,14.46-2.9,9.44-21.25c0,0,16.82,4.94,20.65-10.25
-			c0,0,7.67,16.21,21.83,10.25C54.39,10.25,50.56,26.83,63.54,32.37z" fill="#ffd630"></path>
-                <path d="M44.06,38.35c0,3.51-1.49,6.99-4.42,9.43c-5.06,4.2-11.44,8.16-17.29,7.86l-7.58,7.58
-			c-1.03,1.03-2.69,1.03-3.71,0c-4.36-2.56-7.97-5.62-9.82-9.82c-1.03-1.03-1.03-2.69,0-3.71l1.29-1.3l3.64-3.63l2.48-2.5l0.55-0.55
-			c0,0-2.07-12.73,10.79-20.27c1.34-0.79,3.08-0.53,4.19,0.58c0.68,0.68,1.03,1.56,1.03,2.46c0,0.69-0.2,1.37-0.62,1.98l-4.85,7.05
-			l2.66-3.13c4.65-5.48,13-5.82,18.07-0.74C42.86,32.06,44.06,35.22,44.06,38.35z" fill="#e56353"></path>
-                <path d="M22.35 55.65l-.53.53c-6.07-3-10.49-7.69-13.17-13.91l.55-.55C11.75 47.82 16.4 52.76 22.35 55.65zM13.77 56.61c-.29.92-1.14 1.52-2.05 1.52-.23 0-.45-.03-.66-.1-4.25-1.36-7.11-4.59-8.54-9.64l3.64-3.63c.79 5.06 2.83 8.05 6.21 9.13C13.51 54.26 14.14 55.49 13.77 56.61z"
-                      fill="#e0ded7"></path>
-            </svg>
-
-            Questions fréquentes
-        </h1>
-        {% include 'starter/faq.html' %}
-    </section>
+<section class="">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="flex justify-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl "
+                id="FAQ"> Questions fréquentes
+            </h1>
+        </div>
+    </div>
+    {% include 'starter/faq.html' %}
 </section>
 <!-- ====== FAQ Section End -->
 <!-- Map section -->
 <section>
-    <div class="">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
-            <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
-                <h1 class="text-7xl font-extrabold text-gray-900 m-8 flex items-center justify-center mt-6" id="map">
-                    <svg class=" flex items-center justify-center h-36 w-36" enable-background="new 0 0 64 64"
-                         id="gaming-punch" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M63.54,32.37c0,0-2.08,0.92-4.27,3.13c-0.65,0.65-1.31,1.42-1.91,2.3c-2.29,3.26-4.01,8.16-2.66,15.17
-			c0,0-1.17-0.36-2.99-0.58C46.95,51.85,37.79,52.32,33.74,63c0,0-6.25-14.07-17.78-13.8c-0.26-3.44-1.25-8.27-4.48-11.41
-			c-0.77-1.38-1.8-2.67-3.17-3.74c-1.5-1.19-3.41-2.1-5.84-2.55c0,0,14.46-2.9,9.44-21.25c0,0,16.82,4.94,20.65-10.25
-			c0,0,7.67,16.21,21.83,10.25C54.39,10.25,50.56,26.83,63.54,32.37z" fill="#ffd630"></path>
-                        <path d="M44.06,38.35c0,3.51-1.49,6.99-4.42,9.43c-5.06,4.2-11.44,8.16-17.29,7.86l-7.58,7.58
-			c-1.03,1.03-2.69,1.03-3.71,0c-4.36-2.56-7.97-5.62-9.82-9.82c-1.03-1.03-1.03-2.69,0-3.71l1.29-1.3l3.64-3.63l2.48-2.5l0.55-0.55
-			c0,0-2.07-12.73,10.79-20.27c1.34-0.79,3.08-0.53,4.19,0.58c0.68,0.68,1.03,1.56,1.03,2.46c0,0.69-0.2,1.37-0.62,1.98l-4.85,7.05
-			l2.66-3.13c4.65-5.48,13-5.82,18.07-0.74C42.86,32.06,44.06,35.22,44.06,38.35z" fill="#e56353"></path>
-                        <path d="M22.35 55.65l-.53.53c-6.07-3-10.49-7.69-13.17-13.91l.55-.55C11.75 47.82 16.4 52.76 22.35 55.65zM13.77 56.61c-.29.92-1.14 1.52-2.05 1.52-.23 0-.45-.03-.66-.1-4.25-1.36-7.11-4.59-8.54-9.64l3.64-3.63c.79 5.06 2.83 8.05 6.21 9.13C13.51 54.26 14.14 55.49 13.77 56.61z"
-                              fill="#e0ded7"></path>
-                    </svg>
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+            <div class="flex justify-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">
+                <h1 class="ter mt-6" id="map">
+
                     Où nous trouver ?
                 </h1>
-
-                <p class="mt-4 text-lg text-gray-500"></p>
             </div>
-            <div class="mt-16 lg:mt-20">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="rounded-lg overflow-hidden">
-                        <iframe
-                                allowfullscreen=""
-                                height="480" loading="lazy"
-                                src="https://www.google.com/maps/embed/v1/place?q=126%20Rue%20de%20Neuilly%2C%2093250%20Villemomble&key=AIzaSyBwjD2kdudGNE-jFg6qHAZF_WM_tVboX6w"
-                                style="border:0;" width="100%"></iframe>
-                    </div>
-                    <div>
-                        <div class="max-w-full mx-auto rounded-lg overflow-hidden">
-                            <div class="px-6 py-4">
-                                <h3 class="text-lg font-medium text-gray-900">Adresse</h3>
-                                <p class="mt-1 text-gray-900 text-xl ">126 Rue de Neuilly, 93250 Villemomble</p>
-                            </div>
+        </div>
 
-                            <div class="border-t border-gray-200 px-6 py-4">
-                                <h3 class="text-lg font-medium text-gray-900">Contact</h3>
-                                <p class="mt-1 text-gray-900 text-xl">Email: villemombleboxingclub@gmail.com</p>
-                                <!--                            <p class="mt-1 text-gray-600">Téléphone: +123123</p>-->
-                            </div>
+
+        <p class="mt-4 text-lg text-gray-500"></p>
+        <div class="mt-16 lg:mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="rounded-lg overflow-hidden">
+                    <iframe
+                            allowfullscreen=""
+                            height="480" loading="lazy"
+                            src="https://www.google.com/maps/embed/v1/place?q=126%20Rue%20de%20Neuilly%2C%2093250%20Villemomble&key=AIzaSyBwjD2kdudGNE-jFg6qHAZF_WM_tVboX6w"
+                            style="border:0;" width="100%"></iframe>
+                </div>
+                <div>
+                    <div class="max-w-full mx-auto rounded-lg overflow-hidden">
+                        <div class="px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Adresse</h3>
+                            <p class="mt-1 text-gray-900 text-xl ">126 Rue de Neuilly, 93250 Villemomble</p>
+                        </div>
+
+                        <div class="border-t border-gray-200 px-6 py-4">
+                            <h3 class="text-lg font-medium text-gray-900">Contact</h3>
+                            <p class="mt-1 text-gray-900 text-xl">Email: villemombleboxingclub@gmail.com</p>
+                            <!--                            <p class="mt-1 text-gray-600">Téléphone: +123123</p>-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+
 </section>
 <section>
-            {% include 'starter/contact.html' %}
+    {% include 'starter/contact.html' %}
 
 </section>
-    {% endblock %}
+{% endblock %}
 <script defer src="{% static 'js/index.js'%} " type="text/javascript"></script>
 
