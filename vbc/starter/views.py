@@ -56,6 +56,14 @@ def about(request):
 def faq(request):
     return render(request, 'starter/faq.html')
 
+def schedule(request):
+    return render(request, 'starter/schedule.html')
+
+def pricing(request):
+    return render(request, 'starter/pricing.html')
+
+
+
 
 def success(request):
     return HttpResponse('Success!')

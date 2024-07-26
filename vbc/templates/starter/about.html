@@ -1,4 +1,8 @@
-<!-- ====== About Section Start -->
+{% load  tailwind_tags %}
+{% load tailwind_filters %}
+{% load static %}
+
+{% block content %}
 <article class="pb-8 relative block bg-gray-900">
     <div
             class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
@@ -36,10 +40,8 @@
                     anglaise. Situé au cœur de la ville de Villemomble, notre club est un lieu de rassemblement
                     pour les amateurs de boxe et les pratiquants de tous niveaux.</p>
             </div>
-            <button class="block w-full rounded bg-blue-900 mt-4 px-12 py-3 text-lg font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-                    id="toggle-btn">En savoir plus
-            </button>
-            <div class="hidden" id="more-text">
+
+            <div class="" id="more-text">
                 <h2
                         class="block mb-4 text-xl font-semibold text-primary text-white"
                 > Histoire
@@ -108,10 +110,7 @@
                 </blockquote>
 
             </div>
-            <button class="hidden block w-full rounded bg-blue-900 mt-4 px-12 py-3 text-lg font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-                    id="hide-btn">
-                Réduire
-            </button>
+
         </div>
     </div>
 </article>
@@ -134,11 +133,8 @@ hideBtnEl.addEventListener('click', () => {
 });
 
 
-
-
-
-
-
-
 </script>
+
+
+{% endblock %}
 <!-- ====== About Section End -->
