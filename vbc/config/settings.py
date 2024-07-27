@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['villemombleboxingclub.fr', 'www.villemombleboxingclub.fr', '*']
+ALLOWED_HOSTS = [ "http://127.0.0.1", "*" ]
 
 # Application definition
 
@@ -151,16 +151,6 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# SECURE_HSTS_SECONDS = 31536000
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
-# SECURE_SSL_REDIRECT = True
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-INTERNAL_IPS = [
-    "127.0.0.1",
-
-]
 
 
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
@@ -179,11 +169,6 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 TAILWIND_APP_NAME = 'theme'
 
-# SECURE_HSTS_SECONDS = 31536000
-#
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
@@ -257,3 +242,8 @@ TAGGIT_CASE_INSENSITIVE = True
 
 
 WAGTAILADMIN_BASE_URL = 'http://villemombleboxingclub.fr'
+
+
+SECURE_SSL_REDIRECT=False
+SESSION_COOKIE_SECURE=False
+CSRF_COOKIE_SECURE=False

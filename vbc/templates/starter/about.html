@@ -1,140 +1,101 @@
 {% load  tailwind_tags %}
 {% load tailwind_filters %}
 {% load static %}
-
+{% static 'medias/15630.jpg' as background3_image_url %}
+{% static 'medias/vbc.jpg' as background4_image_url %}
+{% static 'medias/girlboxing.jpg' as background5_image_url %}
+{% static 'medias/coach.jpg' as background6_image_url %}
+{% static 'medias/coach2.jpg' as background7_image_url %}
 {% block content %}
-<article class="pb-8 relative block bg-gray-900">
-    <div
-            class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style="height: 65px;"
-    >
-        <svg
-                class="absolute bottom-0 overflow-hidden"
-                preserveAspectRatio="none"
-                version="1.1"
-                viewBox="0 0 2560 100"
-                x="0"
-                xmlns="http://www.w3.org/2000/svg"
-                y="0"
-        >
+<section>
+    <!--    <div class="container px-5 py-24 mx-auto">-->
+    <!--        <div class="flex flex-col text-center w-full mb-6">-->
+    <!--            <h1 class="sm:text-5xl text-5xl font-medium title-font mb-2 text-gray-900">About Us</h1>-->
+    <!--            <p class="sm:text-lg text-lg font-medium title-font mb-4 text-gray-900">Welcome to our website. Learn more about our services and team.</p>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="relative overflow-hidden rounded-lg mx-auto max-w-screen-2xl md:px-8 container px-5">-->
+    <!--        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">-->
+    <!--            <div class="bg-gray-200 p-6 rounded-lg text-center">-->
+    <!--                <img src="{{background3_image_url}}" alt="About Us Image" class="w-full h-auto object-cover rounded-lg mb-4">-->
+    <!--                <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel urna imperdiet, vestibulum ex nec, suscipit justo.</p>-->
+    <!--            </div>-->
+    <!--            <div class="bg-gray-200 p-6 rounded-lg text-center">-->
+    <!--                <img src="{{background4_image_url}}" alt="About Us Image" class="w-full h-auto object-cover rounded-lg mb-4">-->
+    <!--                <p class="text-sm text-gray-600">Sed blandit, mauris id vestibulum laoreet, nibh tortor ullamcorper nunc, in auctor velit mi vel eros.</p>-->
+    <!--            </div>-->
+    <!--            <div class="bg-gray-200 p-6 rounded-lg text-center">-->
+    <!--                <img src="{{background5_image_url}}" alt="About Us Image" class="w-full h-auto object-cover rounded-lg mb-4">-->
+    <!--                <p class="text-sm text-gray-600">Fusce id dolor nec risus lobortis fermentum. Nulla facilisi. Proin ac ipsum ac turpis tincidunt consectetur.</p>-->
+    <!--            </div>-->
+    <!--            <div class="bg-gray-200 p-6 rounded-lg text-center">-->
+    <!--                <img src="{{background6_image_url}}.jpg" alt="About Us Image" class="w-full h-auto object-cover rounded-lg mb-4">-->
+    <!--                <p class="text-sm text-gray-600">Fusce id dolor nec risus lobortis fermentum. Nulla facilisi. Proin ac ipsum ac turpis tincidunt consectetur.</p>-->
+    <!--            </div>-->
+    <!--            <div class="bg-gray-200 p-6 rounded-lg text-center">-->
+    <!--                <img src="{{background7_image_url}}" alt="About Us Image" class="w-full h-auto object-cover rounded-lg mb-4">-->
+    <!--                <p class="text-sm text-gray-600">Fusce id dolor nec risus lobortis fermentum. Nulla facilisi. Proin ac ipsum ac turpis tincidunt consectetur.</p>-->
+    <!--            </div>-->
+    <!--            <div class="bg-gray-200 p-6 rounded-lg text-center">-->
+    <!--                <img src="static/medias/vbc.jpg" alt="About Us Image" class="w-full h-auto object-cover rounded-lg mb-4">-->
+    <!--                <p class="text-sm text-gray-600">Fusce id dolor nec risus lobortis fermentum. Nulla facilisi. Proin ac ipsum ac turpis tincidunt consectetur.</p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+    <!--²-->
 
-        </svg>
-    </div>
-    <div class="container mx-auto px-4">
-        <div class="flex flex-wrap text-center justify-center">
-            <div class="text-center " id="about">
-                <div class="flex justify-center align-items m-4">
-                    <img class="h-10 w-12  m-4" src="static/medias/ffboxe.png">
-                    <img class="h-10 w-12 rounded m-4" src="static/medias/vbc.png">
-                    <img class="h-10 w-12 rounded m-4" src="static/medias/villemomble.jpg">
-                </div>
-                <h1 class="font-heading text-5xl xs:text-6xl md:text-7xl font-bold text-white mb-10">
-                    <span>À propos du Villemomble Boxing Club</span>
-                </h1>
+    <section class="classes" data-aos="fade-up" data-aos-duration="3000">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full ">
+                <h1 class="sm:text-5xl text-5xl font-medium title-font mb-2 text-white">About Us</h1>
+                <p class="sm:text-lg text-lg font-medium title-font mb-4">Welcome to our website. Learn more about our
+                    services and team.</p>
             </div>
-            <div class="w-full  px-4">
-
-                <p class="text-3xl leading-relaxed mt-4 text-white">
-                    Le<strong> Villemomble Boxing Club</strong>, association loi 1901, a été créée par passion
-                    pour la boxe
-                    anglaise. Situé au cœur de la ville de Villemomble, notre club est un lieu de rassemblement
-                    pour les amateurs de boxe et les pratiquants de tous niveaux.</p>
-            </div>
-
-            <div class="" id="more-text">
-                <h2
-                        class="block mb-4 text-xl font-semibold text-primary text-white"
-                > Histoire
-                </h2>
-
-                <p class="mb-3 text-white text-3xl">Depuis sa création, le Villemomble Boxing Club a su se démarquer
-                    par
-                    son
-                    engagement envers
-                    la transmission des valeurs de la boxe anglaise, tant sur le plan sportif que sur le plan
-                    social. Notre association est axée sur l'éducation et le développement personnel de ses
-                    membres, que ce soit pour les enfants, les adolescents ou les adultes. Nous offrons des
-                    séances d'entraînement variées, allant des débutants aux compétiteurs expérimentés, pour
-                    tous les âges.</p>
-
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    <p class="mb-3 text-white text-3xl"><b>Boxe éducative pour les enfants (6/12 ans) </b>: Nous
-                        croyons
-                        que le
-                        sport est un
-                        moyen puissant d'apprendre et de se développer. Nos séances pour les enfants se
-                        concentrent
-                        sur le plaisir, la discipline et le développement de compétences essentielles.</p>
-                    <p class="mb-3 text-white text-3xl"><b> Ados/Adultes </b>: Pour les adolescents et les adultes,
-                        nous
-                        proposons des
-                        séances
-                        d'entraînement plus intenses, combinant boxe anglaise et condition physique, pour
-                        préparer
-                        les compétiteurs à des compétitions locales et nationales.</p>
-                </div>
-
-
-                <h2
-                        class="block mb-4 text-xl font-semibold text-primary text-white"
-                > Valeurs
-                </h2>
-
-                <p class="mb-5 text-3xl  text-white ">
-
-                    Nous valorisons l'esprit d'équipe, la discipline, la persévérance et le fair-play. Le VBC est un
-                    lieu
-                    où
-                    chacun
-                    peut s'épanouir, apprendre et progresser en
-                    boxe anglaise.</p>
-
-                <h2
-                        class="block mb-4 text-xl font-semibold text-primary text-white"
-                >Objectifs
-                </h2>
-
-                <p class="mb-5  text-white text-3xl">
-
-                    Notre objectif principal est de promouvoir le noble art et de contribuer au
-                    développement des jeunes talents de Villemomble.
-                    Nous visons à offrir un environnement sûr
-                    et stimulant où chacun peut s'entraîner, se défouler et se surpasser.</p>
-
-                <blockquote class="text-4xl italic font-semibold text-white ">
-                    <p>Nous accueillons tous ceux qui souhaitent découvrir ou approfondir la boxe anglaise. Que
-                        vous soyez un débutant ou un boxeur expérimenté,
-                        nous sommes impatients de vous
-                        accueillir au sein notre club.</p>
-                    <span class="inline-block py-1 px-3  text-xs font-semibold text-orange-900 bg-orange-50 rounded-full">FIGHTING!</span>
-                </blockquote>
-
-            </div>
-
         </div>
-    </div>
-</article>
+        <div class="relative overflow-hidden mx-auto  container px-5 ">
+            <div class="glide">
+                <div class="glide__track " data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide object-cover h-24">
+                            <img alt="Image 1" class="h-full w-full object-cover rounded-lg"
+                                 src="{{background3_image_url}}">
+                        </li>
+                        <li class="glide__slide object-cover h-24">
+                            <img alt="Image 2" class="h-full w-full object-cover rounded-lg"
+                                 src="{{background4_image_url}}">
+                        </li>
+                        <li class="glide__slide object-cover h-24">
+                            <img alt="Image 3" class="h-full w-full object-cover rounded-lg"
+                                 src="{{background5_image_url}}">
+                        </li>
+                    </ul>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                </div>
+            </div>
+        </div>
 
-<script>
-const moreTextEl = document.getElementById('more-text');
-const toggleBtnEl = document.getElementById('toggle-btn');
-const hideBtnEl = document.getElementById('hide-btn');
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+        </div>
+        </div>
+    </section>
+    <script>
+    new Glide('.glide', {
+        type: 'carousel',
+        perView: 1,
+      autoplay: 1500, // Autoplay interval in milliseconds (e.g., 5000 = 5 seconds)
+    }).mount();
 
-toggleBtnEl.addEventListener('click', () => {
-    moreTextEl.classList.toggle('hidden');
-    toggleBtnEl.classList.toggle('hidden');
-    hideBtnEl.classList.toggle('hidden');
-});
-
-hideBtnEl.addEventListener('click', () => {
-    moreTextEl.classList.toggle('hidden');
-    toggleBtnEl.classList.toggle('hidden');
-    hideBtnEl.classList.toggle('hidden');
-});
-
-
-</script>
-
+    </script>
+</section>
 
 {% endblock %}
 <!-- ====== About Section End -->
